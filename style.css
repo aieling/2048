@@ -1,24 +1,3 @@
-html{
-    background-color: #f2e6d9;
-}
-body{
-    font-family: 'Pacifico', cursive;
-    margin-top: 25px !important;
-    background-color: #f2e6d9!important;
-}
-.grid-cell{
-
-    text-align: center;
-
-    font-size: xx-large;
-    font-family: 'Pacifico', cursive;
-}
-
-.grid-container {
-    margin: auto;
-}
-
-
 
 h1{
     text-align: center;
@@ -29,33 +8,58 @@ h1{
     justify-content: center;
 }
 
+.grid-cell{
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'Pacifico', cursive;
+}
+
+.grid-container {
+    margin: auto;
+}
+
+.game{
+    display: flex;
+    margin: auto;
+    width: 50%;
+    justify-content: center;
+}
+
+.total{
+    margin-right : 50px;
+    background-color: #cca300;
+    border-style: 5px solid ;
+    border-radius: 5%;
+    width: 100px;
+    height: 50px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
 .btn{
     margin: 5px;
 }
 
+/* grid-cell color */
+
 .color2{
     background-color: #ffebcc!important;
-
 }
 
 .color4{
     background-color: #ffc266!important;
-
 }
 
 .color8{
     background-color: #ff9900!important;
-
 }
 
 .color16{
     background-color: #b36b00!important;
-
 }
 
 .color32{
     background-color: #ff704d!important;
-
 }
 
 .color64{
@@ -81,83 +85,55 @@ h1{
 
 .color2048{
     background-color: #cca300!important;
-
 }
 
-.colorNull{
-    background-color: #dec0a0 !important;
-}
-
-
-
-
-/* The Modal (background) */
+/* The Modal */
 #dialog  {
-
     text-align: center;
     width: 300px;
-   height: 300px;
-   position: absolute;
-   left: 50%;
-   top: 50%; 
-   margin-left: -150px;
-   margin-top: -150px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%; 
+    margin-left: -150px;
+    margin-top: -150px;
   }
 
-
-
-  h2{
-      margin: auto;
-  }
+h2{
+    margin: auto;
+}
   
-  /* Modal Content */
-  .modal-content {
+/* Modal Content */
+.modal-content {
     background-color: #fefefe;
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s
-  }
+}
   
-  /* Add Animation */
-  @-webkit-keyframes animatetop {
+/* Add Animation */
+@-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 
     to {top:0; opacity:1}
-  }
+}
   
-  @keyframes animatetop {
+@keyframes animatetop {
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
-  }
-
+}
   
-  .modal-header {
+.modal-header {
     padding: 2px 16px;
     background-color: #dec0a0;
     color: white;
-  }
-  
-  .modal-body {padding: 2px 16px;}
-  
-.game{
-    display: flex;
-    margin: auto;
-    width: 50%;
-    justify-content: center;
 }
-
-.total{
-    margin-right : 50px;
-    background-color: #cca300;
-    border-style: 5px solid ;
-    border-radius: 5%;
-    width: 100px;
-    height: 50px;
-    margin-bottom: 5px;
-    text-align: center;
+  
+.modal-body {
+    padding: 2px 16px;
 }
+  

@@ -1,8 +1,6 @@
 var container = $('.grid-container');
 var cell = $('.grid-cell');
 var row = $('.grid-row');
-
-
 var dialog = $('#dialog');
 var grid = [
     [0,0,0,0],
@@ -10,13 +8,8 @@ var grid = [
     [0,0,0,0],
     [0,0,0,0]
 ];
-
 var score = 0;
-$( ".play" ).click(function() {
-   location.reload();
-  });
 
-// style
 $(function() {
     container.css('background-color','#ca9b68');
     container.css('width','300px');
@@ -32,6 +25,21 @@ $(function() {
     cell.css('width','100%');
 });
 
+$.fn.game = function() {
+    score = 0;
+    addNumber();
+    addNumber();
+    drawGame();
+};
+
+$( ".play" ).click(function() {
+    location.reload();
+ });
+ 
+$( "html" ).game();
+
+
+
 function buildGrid(){
     let newGrid = [
         [0,0,0,0],
@@ -39,7 +47,6 @@ function buildGrid(){
         [0,0,0,0],
         [0,0,0,0]
     ];
-
     return newGrid;
 }
 
@@ -84,15 +91,6 @@ function compareGrid(grid, copy){
     return false;
 }
 
-function game(){
-   score = 0;
-   addNumber();
-   addNumber();
-   drawGame();
-
-}
-
-
 function drawGame(){
     var k = 0;
     for(i=0; i<4; i++){
@@ -105,13 +103,11 @@ function drawGame(){
  
                               $('.grid-cell').eq(k).removeClass(element); 
                               
-                              });  
-                                                        
+                              });                                 
                      }
             if(grid[i][j] != 0){
                 $('.grid-cell')[k].append(grid[i][j]); 
                 $('.grid-cell').eq(k).addClass("color"+grid[i][j]); 
-
             }  
             k++;        
         }
@@ -139,8 +135,6 @@ function addition(row){
     return row;
 }
 
-
-
 function operate(row){
     row = slide(row);
     row= addition(row);
@@ -151,7 +145,6 @@ function operate(row){
 function reversedRow(row){
     row = row.reverse();
 }
-
 
 function rotatedRow(grid){
     let blank = buildGrid();
@@ -181,7 +174,7 @@ function isGameOver() {
     return true;
   }
 
-  function isGameWon() {
+function isGameWon() {
     for (let i = 0; i < 4; i++) {
       for (let j = 0; j < 4; j++) {
         if (grid[i][j] == 2048) {
@@ -190,12 +183,9 @@ function isGameOver() {
       }
     }
     return false;
-  }
+}
 
-game();
-
-function showDialog()
-{
+function showDialog(){
     $("#dialog").html("Dialog Text.");
     $("#dialog").dialog().dialog('open');
 }
@@ -268,7 +258,6 @@ $("body").keydown(function(e) {
         }
     }
 });
-
 
 function removeColor(classNames){
     var current_classes = classNames.split(" "), // change the list into an array
